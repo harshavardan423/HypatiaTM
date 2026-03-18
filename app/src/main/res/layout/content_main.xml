@@ -1,17 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#0a0d14"
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/txtLogOutput"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:text=""
-        android:scrollbars="vertical"
-        android:maxLines="500"
-        android:gravity="bottom" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Status Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="12dp"
+            android:padding="24dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtStatusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROTECTED"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#81c784"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/txtStatusSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap scan to check your device"
+                android:textSize="12sp"
+                android:textColor="#546e7a"/>
+
+        </LinearLayout>
+
+        <!-- Stats Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/card_background"
+                android:padding="14dp"
+                android:gravity="center"
+                android:layout_marginEnd="6dp">
+                <TextView
+                    android:id="@+id/txtStatFiles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#81c784"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FILES SCANNED"
+                    android:textSize="9sp"
+                    android:textColor="#546e7a"
+                    android:letterSpacing="0.1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/card_background"
+                android:padding="14dp"
+                android:gravity="center"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp">
+                <TextView
+                    android:id="@+id/txtStatSigs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.6M"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#c5cae9"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SIGNATURES"
+                    android:textSize="9sp"
+                    android:textColor="#546e7a"
+                    android:letterSpacing="0.1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/card_background"
+                android:padding="14dp"
+                android:gravity="center"
+                android:layout_marginStart="6dp">
+                <TextView
+                    android:id="@+id/txtStatThreats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#ef5350"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="THREATS"
+                    android:textSize="9sp"
+                    android:textColor="#546e7a"
+                    android:letterSpacing="0.1"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Log Output -->
+        <TextView
+            android:id="@+id/txtLogOutput"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@drawable/card_background"
+            android:padding="14dp"
+            android:textSize="11sp"
+            android:textColor="#546e7a"
+            android:fontFamily="monospace"
+            android:scrollbars="vertical"
+            android:maxLines="200"
+            android:layout_marginBottom="12dp"
+            android:gravity="bottom"/>
+
+    </LinearLayout>
+</ScrollView>
