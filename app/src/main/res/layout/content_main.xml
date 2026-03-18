@@ -43,17 +43,12 @@
         </LinearLayout>
 
         <!-- Progress Bar -->
-        <ProgressBar
+        <View
             android:id="@+id/scanProgressBar"
-            style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="match_parent"
-            android:layout_height="6dp"
+            android:layout_height="3dp"
             android:layout_marginBottom="12dp"
-            android:progressTint="#7986cb"
-            android:progressBackgroundTint="#1e2535"
-            android:indeterminate="false"
-            android:max="100"
-            android:progress="0"
+            android:background="#7986cb"
             android:visibility="gone"/>
 
         <!-- Stats Row -->
