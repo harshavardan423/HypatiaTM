@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Hypatia</string>
-    <string name="app_copyright">Copyright 2017-2024 Divested Computing Group</string>
+    <string name="app_name" translatable="false">ThreatMind AV</string>
+    <string name="app_copyright">Copyright 2026 ThreatMind</string>
     <string name="app_license">License: GPL-3.0</string>
     <string name="app_version">Version: %s</string>
     <string name="app_db_type_clamav">Powered by ClamAV style signatures</string>
@@ -21,7 +21,7 @@
     <string name="lblNotificationRealtimeTitle">Realtime Scanner</string>
     <string name="lblNotificationRealtimeDescription">Used to show files scanned counter and maintain the background service</string>
     <string name="lblNotificationRealtimeText">Known malware will be detected in realtime</string>
-    <string name="lblNotificationRealtimeStopped">Hypatia: Realtime Scanning Stopped</string>
+    <string name="lblNotificationRealtimeStopped">ThreatMind AV: Realtime Scanning Stopped</string>
     <string name="lblNotificationRealtimeDetection">Malware Detected:</string>
     <string name="lblRealtimeScannerToggle">Realtime Scanner</string>
     <string name="lblReset">Reset</string>
@@ -78,8 +78,8 @@
     <string name="lblWroteTestFiles">Wrote test files!</string>
     <string name="lblResetPrimary">Primary Servers</string>
     <string name="lblResetCloudflare">Cloudflare Mirror</string>
-    <string name="accessibility_service_label">Hypatia Link Scanner</string>
-    <string name="accessibility_service_description">Extracts domains from all screen text content and checks them against a blocklist</string>
+    <string name="accessibility_service_label">ThreatMind Link Scanner</string>
+    <string name="accessibility_service_description">ThreatMind scans links and domains in real time to protect against malicious content</string>
     <string name="lblNotificationLinkDetection">Malicious Link Detected:</string>
     <string name="lblLinkScannerToggle">Link Scanner</string>
     <string name="confirm_link_scanner_title">Enable link scanner?</string>
