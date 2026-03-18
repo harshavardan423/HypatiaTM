@@ -2,7 +2,7 @@ name: Build ThreatMind AV
 
 on:
   push:
-    branches: [ master, stable ]
+    branches: [ stable ]
   workflow_dispatch:
 
 jobs:
