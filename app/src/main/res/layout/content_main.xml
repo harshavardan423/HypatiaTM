@@ -36,11 +36,25 @@
                 android:id="@+id/txtStatusSub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tap scan to check your device"
+                android:text="Tap to scan your device"
                 android:textSize="12sp"
                 android:textColor="#546e7a"/>
 
         </LinearLayout>
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/scanProgressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginBottom="12dp"
+            android:progressTint="#7986cb"
+            android:progressBackgroundTint="#1e2535"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
+            android:visibility="gone"/>
 
         <!-- Stats Row -->
         <LinearLayout
@@ -127,6 +141,46 @@
                     android:textColor="#546e7a"
                     android:letterSpacing="0.1"/>
             </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Last Scan Info -->
+        <TextView
+            android:id="@+id/txtLastScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No scan performed yet"
+            android:textSize="11sp"
+            android:textColor="#37474f"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Threat List Card (hidden until threats found) -->
+        <LinearLayout
+            android:id="@+id/threatListCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background_danger"
+            android:layout_marginBottom="12dp"
+            android:padding="14dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THREATS DETECTED"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#ef5350"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/threatListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
 
         </LinearLayout>
 
