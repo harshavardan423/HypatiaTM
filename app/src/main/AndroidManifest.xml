@@ -43,10 +43,9 @@
             android:excludeFromRecents="true" />
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation|keyboardHidden"
             android:exported="true"
             android:screenOrientation="unspecified"
-            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:configChanges="orientation|screenSize|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
