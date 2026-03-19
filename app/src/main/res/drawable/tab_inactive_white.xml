@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#f0f4f8"/>
+    <corners android:radius="8dp"/>
+    <stroke android:width="0.5dp" android:color="#c8d4de"/>
+</shape>
+```
+
+Also update `AndroidManifest.xml` to enable landscape — find:
+```
+https://github.com/harshavardan423/HypatiaTM/blob/stable/app/src/main/AndroidManifest.xml
