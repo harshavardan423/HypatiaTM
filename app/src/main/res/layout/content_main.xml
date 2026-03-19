@@ -8,42 +8,63 @@
     <!-- Custom Header -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:orientation="horizontal"
         android:background="#ffffff"
-        android:padding="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:gravity="center_vertical">
 
-        <TextView
+        <ImageView
+            android:id="@+id/headerLogo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginEnd="10dp"/>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="THREATMIND"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#0d1117"
-            android:fontFamily="monospace"
-            android:letterSpacing="0.08"/>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THREATMIND"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#0d1117"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.06"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SECURITY v1.0"
+                android:textSize="9sp"
+                android:textColor="#8a9baa"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
 
         <TextView
+            android:id="@+id/headerStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SECURITY v1.0"
+            android:text="● PROTECTED"
             android:textSize="10sp"
-            android:textColor="#5a6a7a"
+            android:textStyle="bold"
+            android:textColor="#00875a"
             android:fontFamily="monospace"/>
 
     </LinearLayout>
 
-    <!-- Thin header border -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#c8d4de"/>
 
-    <!-- Content Pages (switched by bottom nav) -->
-
-    <!-- SCAN PAGE -->
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- SCAN PAGE                                      -->
+    <!-- ══════════════════════════════════════════════ -->
     <LinearLayout
         android:id="@+id/pageScan"
         android:layout_width="match_parent"
@@ -58,7 +79,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="#00875a"
-            android:padding="24dp"
+            android:padding="20dp"
             android:gravity="center"
             android:layout_margin="16dp">
 
@@ -67,11 +88,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TAP TO SCAN YOUR DEVICE"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="#ffffff"
                 android:fontFamily="monospace"
-                android:letterSpacing="0.06"
+                android:letterSpacing="0.04"
                 android:gravity="center"/>
 
             <TextView
@@ -79,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1.6M signatures ready"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:textColor="#ccffffff"
                 android:fontFamily="monospace"
                 android:layout_marginTop="4dp"
@@ -89,9 +110,66 @@
                 android:id="@+id/scanProgressBar"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="12dp"
                 android:background="#ffffff"
                 android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <!-- Scan Type Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/btnScanQuick"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⚡ QUICK"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#0066cc"
+                android:gravity="center"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:background="@drawable/tab_active_white"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:id="@+id/btnScanFull"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="◎ FULL"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#5a6a7a"
+                android:gravity="center"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:background="@drawable/tab_inactive_white"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:id="@+id/btnScanApps"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⊞ APPS"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#5a6a7a"
+                android:gravity="center"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:background="@drawable/tab_inactive_white"
+                android:layout_marginStart="4dp"/>
 
         </LinearLayout>
 
@@ -110,15 +188,15 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card_white"
-                android:padding="14dp"
+                android:padding="12dp"
                 android:gravity="center"
-                android:layout_marginEnd="6dp">
+                android:layout_marginEnd="5dp">
                 <TextView
                     android:id="@+id/txtStatFiles"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#00875a"
                     android:fontFamily="monospace"/>
@@ -126,7 +204,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="FILES SCANNED"
-                    android:textSize="8sp"
+                    android:textSize="7sp"
                     android:textColor="#5a6a7a"
                     android:fontFamily="monospace"/>
             </LinearLayout>
@@ -137,16 +215,16 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card_white"
-                android:padding="14dp"
+                android:padding="12dp"
                 android:gravity="center"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="3dp">
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
                 <TextView
                     android:id="@+id/txtStatSigs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1.6M"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#0066cc"
                     android:fontFamily="monospace"/>
@@ -154,7 +232,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SIGNATURES"
-                    android:textSize="8sp"
+                    android:textSize="7sp"
                     android:textColor="#5a6a7a"
                     android:fontFamily="monospace"/>
             </LinearLayout>
@@ -165,15 +243,15 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card_white"
-                android:padding="14dp"
+                android:padding="12dp"
                 android:gravity="center"
-                android:layout_marginStart="6dp">
+                android:layout_marginStart="5dp">
                 <TextView
                     android:id="@+id/txtStatThreats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#cc1f3a"
                     android:fontFamily="monospace"/>
@@ -181,7 +259,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="THREATS"
-                    android:textSize="8sp"
+                    android:textSize="7sp"
                     android:textColor="#5a6a7a"
                     android:fontFamily="monospace"/>
             </LinearLayout>
@@ -198,19 +276,18 @@
             android:textColor="#8a9baa"
             android:gravity="center"
             android:fontFamily="monospace"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="6dp"/>
 
         <!-- Log Label -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SCAN LOG"
-            android:textSize="10sp"
+            android:textSize="9sp"
             android:textStyle="bold"
             android:textColor="#5a6a7a"
             android:fontFamily="monospace"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
             android:layout_marginBottom="4dp"/>
 
         <!-- Log Output -->
@@ -221,10 +298,10 @@
             android:layout_weight="1"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/card_white"
-            android:padding="14dp"
-            android:textSize="11sp"
+            android:padding="12dp"
+            android:textSize="10sp"
             android:textColor="#0d1117"
             android:fontFamily="monospace"
             android:scrollbars="vertical"
@@ -233,7 +310,131 @@
 
     </LinearLayout>
 
-    <!-- QUARANTINE PAGE -->
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- REALTIME PAGE                                  -->
+    <!-- ══════════════════════════════════════════════ -->
+    <LinearLayout
+        android:id="@+id/pageRealtime"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REALTIME PROTECTION"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#0d1117"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monitors new and modified files in realtime"
+            android:textSize="10sp"
+            android:textColor="#5a6a7a"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Status Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/card_white"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/txtRealtimeStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="○  INACTIVE"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#8a9baa"
+                android:fontFamily="monospace"/>
+
+            <TextView
+                android:id="@+id/txtRealtimeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 events"
+                android:textSize="10sp"
+                android:textColor="#8a9baa"
+                android:fontFamily="monospace"/>
+
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnStartRealtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="▶  START MONITORING"
+                android:textSize="11sp"
+                android:textColor="#ffffff"
+                android:backgroundTint="#0066cc"
+                android:fontFamily="monospace"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnStopRealtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="■  STOP"
+                android:textSize="11sp"
+                android:textColor="#ffffff"
+                android:backgroundTint="#0d1117"
+                android:fontFamily="monospace"/>
+
+        </LinearLayout>
+
+        <!-- Events Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REALTIME EVENTS"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:textColor="#5a6a7a"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Events Log -->
+        <TextView
+            android:id="@+id/txtRealtimeLog"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_white"
+            android:padding="12dp"
+            android:textSize="10sp"
+            android:textColor="#0d1117"
+            android:fontFamily="monospace"
+            android:scrollbars="vertical"
+            android:maxLines="500"
+            android:gravity="top"
+            android:text="Realtime monitor ready. Press START to begin."/>
+
+    </LinearLayout>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- QUARANTINE PAGE                                -->
+    <!-- ══════════════════════════════════════════════ -->
     <ScrollView
         android:id="@+id/pageQuarantine"
         android:layout_width="match_parent"
@@ -251,7 +452,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="QUARANTINE"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 android:textColor="#0d1117"
                 android:fontFamily="monospace"
@@ -261,7 +462,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Files flagged during scanning"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:textColor="#5a6a7a"
                 android:fontFamily="monospace"
                 android:layout_marginBottom="16dp"/>
@@ -280,7 +481,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="THREATS DETECTED"
-                    android:textSize="11sp"
+                    android:textSize="10sp"
                     android:textStyle="bold"
                     android:textColor="#cc1f3a"
                     android:fontFamily="monospace"
@@ -300,7 +501,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="40dp"
+                android:padding="48dp"
                 android:background="@drawable/card_white">
 
                 <TextView
@@ -315,7 +516,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No threats in quarantine"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textColor="#5a6a7a"
                     android:gravity="center"
                     android:fontFamily="monospace"
@@ -336,7 +537,9 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- SETTINGS PAGE -->
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- SETTINGS PAGE                                  -->
+    <!-- ══════════════════════════════════════════════ -->
     <ScrollView
         android:id="@+id/pageSettings"
         android:layout_width="match_parent"
@@ -354,18 +557,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SETTINGS"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 android:textColor="#0d1117"
                 android:fontFamily="monospace"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Section: Scan -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SCAN DATABASE"
-                android:textSize="10sp"
+                android:text="SIGNATURE DATABASE"
+                android:textSize="9sp"
                 android:textStyle="bold"
                 android:textColor="#0066cc"
                 android:fontFamily="monospace"
@@ -393,7 +595,7 @@
                     android:id="@+id/btnUpdateDatabase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="UPDATE DATABASES"
+                    android:text="⬇  UPDATE DATABASES"
                     android:textSize="11sp"
                     android:textColor="#ffffff"
                     android:backgroundTint="#0066cc"
@@ -411,15 +613,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="8dp">
-                    <TextView
+                    android:layout_marginBottom="12dp">
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Extended database (~200MB)"
-                        android:textSize="12sp"
-                        android:textColor="#0d1117"
-                        android:fontFamily="monospace"/>
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Extended database"
+                            android:textSize="12sp"
+                            android:textColor="#0d1117"
+                            android:fontFamily="monospace"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="~200MB download, 40M+ signatures"
+                            android:textSize="10sp"
+                            android:textColor="#8a9baa"
+                            android:fontFamily="monospace"/>
+                    </LinearLayout>
                     <Switch
                         android:id="@+id/switchExtended"
                         android:layout_width="wrap_content"
@@ -431,14 +645,26 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
-                    <TextView
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Link / domain scanner"
-                        android:textSize="12sp"
-                        android:textColor="#0d1117"
-                        android:fontFamily="monospace"/>
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link / domain scanner"
+                            android:textSize="12sp"
+                            android:textColor="#0d1117"
+                            android:fontFamily="monospace"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scans URLs on screen for malicious domains"
+                            android:textSize="10sp"
+                            android:textColor="#8a9baa"
+                            android:fontFamily="monospace"/>
+                    </LinearLayout>
                     <Switch
                         android:id="@+id/switchLinkScanner"
                         android:layout_width="wrap_content"
@@ -447,12 +673,11 @@
 
             </LinearLayout>
 
-            <!-- Section: Protection -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="PROTECTION"
-                android:textSize="10sp"
+                android:text="SCAN OPTIONS"
+                android:textSize="9sp"
                 android:textStyle="bold"
                 android:textColor="#0066cc"
                 android:fontFamily="monospace"
@@ -471,19 +696,61 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="8dp">
+                    android:layout_marginBottom="12dp">
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Realtime scanner"
+                        android:text="Scan system directories"
                         android:textSize="12sp"
                         android:textColor="#0d1117"
                         android:fontFamily="monospace"/>
                     <Switch
-                        android:id="@+id/switchRealtime"
+                        android:id="@+id/switchScanSystem"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Scan installed apps"
+                        android:textSize="12sp"
+                        android:textColor="#0d1117"
+                        android:fontFamily="monospace"/>
+                    <Switch
+                        android:id="@+id/switchScanApps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Scan internal storage"
+                        android:textSize="12sp"
+                        android:textColor="#0d1117"
+                        android:fontFamily="monospace"/>
+                    <Switch
+                        android:id="@+id/switchScanInternal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -495,10 +762,61 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Download over Tor (requires Orbot)"
+                        android:text="Scan external storage"
                         android:textSize="12sp"
                         android:textColor="#0d1117"
                         android:fontFamily="monospace"/>
+                    <Switch
+                        android:id="@+id/switchScanExternal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NETWORK"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:textColor="#0066cc"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_white"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Download over Tor"
+                            android:textSize="12sp"
+                            android:textColor="#0d1117"
+                            android:fontFamily="monospace"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Requires Orbot to be installed"
+                            android:textSize="10sp"
+                            android:textColor="#8a9baa"
+                            android:fontFamily="monospace"/>
+                    </LinearLayout>
                     <Switch
                         android:id="@+id/switchTor"
                         android:layout_width="wrap_content"
@@ -507,12 +825,11 @@
 
             </LinearLayout>
 
-            <!-- Section: Advanced -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ADVANCED"
-                android:textSize="10sp"
+                android:textSize="9sp"
                 android:textStyle="bold"
                 android:textColor="#0066cc"
                 android:fontFamily="monospace"
@@ -530,7 +847,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Database server URL"
-                    android:textSize="11sp"
+                    android:textSize="10sp"
                     android:textColor="#5a6a7a"
                     android:fontFamily="monospace"
                     android:layout_marginBottom="6dp"/>
@@ -544,19 +861,13 @@
                     android:inputType="textUri"
                     android:background="@drawable/input_bg"
                     android:padding="10dp"
-                    android:layout_marginBottom="12dp"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="#c8d4de"
-                    android:layout_marginBottom="12dp"/>
+                    android:layout_marginBottom="14dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Database signing key"
-                    android:textSize="11sp"
+                    android:textSize="10sp"
                     android:textColor="#5a6a7a"
                     android:fontFamily="monospace"
                     android:layout_marginBottom="6dp"/>
@@ -576,7 +887,7 @@
                     android:id="@+id/btnSaveAdvanced"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SAVE"
+                    android:text="SAVE SETTINGS"
                     android:textSize="11sp"
                     android:textColor="#ffffff"
                     android:backgroundTint="#0d1117"
@@ -584,7 +895,6 @@
 
             </LinearLayout>
 
-            <!-- Section: About -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -605,7 +915,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Powered by ClamAV signatures · MaintainTeam DB"
+                    android:text="Powered by ClamAV · MaintainTeam signatures"
                     android:textSize="10sp"
                     android:textColor="#8a9baa"
                     android:fontFamily="monospace"
@@ -616,15 +926,16 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation -->
+    <!-- Bottom Nav Border -->
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="#c8d4de"/>
 
+    <!-- Bottom Navigation - 4 tabs -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:background="#ffffff">
 
@@ -635,13 +946,13 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:padding="8dp">
+            android:padding="6dp">
             <TextView
                 android:id="@+id/navScanIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="⬡"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#0066cc"
                 android:gravity="center"/>
             <TextView
@@ -649,11 +960,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SCAN"
-                android:textSize="9sp"
+                android:textSize="8sp"
                 android:textStyle="bold"
                 android:textColor="#0066cc"
-                android:fontFamily="monospace"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navRealtime"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="6dp">
+            <TextView
+                android:id="@+id/navRealtimeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="◉"
+                android:textSize="18sp"
+                android:textColor="#8a9baa"
                 android:gravity="center"/>
+            <TextView
+                android:id="@+id/navRealtimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REALTIME"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                android:textColor="#8a9baa"
+                android:fontFamily="monospace"/>
         </LinearLayout>
 
         <LinearLayout
@@ -663,13 +1000,13 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:padding="8dp">
+            android:padding="6dp">
             <TextView
                 android:id="@+id/navQuarantineIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="☣"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#8a9baa"
                 android:gravity="center"/>
             <TextView
@@ -677,11 +1014,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="QUARANTINE"
-                android:textSize="9sp"
+                android:textSize="8sp"
                 android:textStyle="bold"
                 android:textColor="#8a9baa"
-                android:fontFamily="monospace"
-                android:gravity="center"/>
+                android:fontFamily="monospace"/>
         </LinearLayout>
 
         <LinearLayout
@@ -691,13 +1027,13 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:padding="8dp">
+            android:padding="6dp">
             <TextView
                 android:id="@+id/navSettingsIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="⚙"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#8a9baa"
                 android:gravity="center"/>
             <TextView
@@ -705,11 +1041,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SETTINGS"
-                android:textSize="9sp"
+                android:textSize="8sp"
                 android:textStyle="bold"
                 android:textColor="#8a9baa"
-                android:fontFamily="monospace"
-                android:gravity="center"/>
+                android:fontFamily="monospace"/>
         </LinearLayout>
 
     </LinearLayout>
