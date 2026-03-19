@@ -3,15 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0a0d14">
+    android:background="#f0f4f8">
 
-    <!-- Top Status Banner -->
+    <!-- Status Banner -->
     <LinearLayout
+        android:id="@+id/statusBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/card_background"
-        android:padding="28dp"
+        android:background="#00875a"
+        android:padding="20dp"
         android:gravity="center"
         android:layout_margin="16dp">
 
@@ -19,27 +20,29 @@
             android:id="@+id/txtStatusLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PROTECTED"
-            android:textSize="30sp"
+            android:text="YOUR DEVICE IS PROTECTED"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#81c784"
-            android:letterSpacing="0.15"
-            android:layout_marginBottom="6dp"/>
+            android:textColor="#ffffff"
+            android:letterSpacing="0.08"
+            android:fontFamily="monospace"/>
 
         <TextView
             android:id="@+id/txtStatusSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tap to scan your device"
-            android:textSize="12sp"
-            android:textColor="#546e7a"/>
+            android:textSize="11sp"
+            android:textColor="#ccffffff"
+            android:layout_marginTop="2dp"
+            android:fontFamily="monospace"/>
 
         <View
             android:id="@+id/scanProgressBar"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:layout_marginTop="16dp"
-            android:background="#7986cb"
+            android:layout_marginTop="12dp"
+            android:background="#ffffff"
             android:visibility="gone"/>
 
     </LinearLayout>
@@ -51,14 +54,14 @@
         android:orientation="horizontal"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:layout_marginBottom="12dp">
+        android:layout_marginBottom="8dp">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@drawable/card_background"
+            android:background="@drawable/card_white"
             android:padding="14dp"
             android:gravity="center"
             android:layout_marginEnd="6dp">
@@ -67,16 +70,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="#81c784"/>
+                android:textColor="#00875a"
+                android:fontFamily="monospace"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="FILES SCANNED"
                 android:textSize="8sp"
-                android:textColor="#546e7a"
-                android:letterSpacing="0.1"/>
+                android:textColor="#5a6a7a"
+                android:letterSpacing="0.05"
+                android:fontFamily="monospace"/>
         </LinearLayout>
 
         <LinearLayout
@@ -84,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@drawable/card_background"
+            android:background="@drawable/card_white"
             android:padding="14dp"
             android:gravity="center"
             android:layout_marginStart="3dp"
@@ -94,16 +99,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1.6M"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="#c5cae9"/>
+                android:textColor="#0066cc"
+                android:fontFamily="monospace"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SIGNATURES"
                 android:textSize="8sp"
-                android:textColor="#546e7a"
-                android:letterSpacing="0.1"/>
+                android:textColor="#5a6a7a"
+                android:letterSpacing="0.05"
+                android:fontFamily="monospace"/>
         </LinearLayout>
 
         <LinearLayout
@@ -111,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@drawable/card_background"
+            android:background="@drawable/card_white"
             android:padding="14dp"
             android:gravity="center"
             android:layout_marginStart="6dp">
@@ -120,16 +127,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="#ef5350"/>
+                android:textColor="#cc1f3a"
+                android:fontFamily="monospace"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="THREATS"
                 android:textSize="8sp"
-                android:textColor="#546e7a"
-                android:letterSpacing="0.1"/>
+                android:textColor="#5a6a7a"
+                android:letterSpacing="0.05"
+                android:fontFamily="monospace"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -141,9 +150,10 @@
         android:layout_height="wrap_content"
         android:text="No scan performed yet"
         android:textSize="10sp"
-        android:textColor="#37474f"
+        android:textColor="#8a9baa"
         android:gravity="center"
-        android:layout_marginBottom="12dp"/>
+        android:fontFamily="monospace"
+        android:layout_marginBottom="8dp"/>
 
     <!-- Tab Bar -->
     <LinearLayout
@@ -162,10 +172,11 @@
             android:text="SCAN LOG"
             android:textSize="10sp"
             android:textStyle="bold"
-            android:textColor="#7986cb"
+            android:textColor="#0066cc"
             android:gravity="center"
             android:padding="10dp"
-            android:background="@drawable/tab_active"/>
+            android:fontFamily="monospace"
+            android:background="@drawable/tab_active_white"/>
 
         <View
             android:layout_width="8dp"
@@ -179,10 +190,11 @@
             android:text="QUARANTINE"
             android:textSize="10sp"
             android:textStyle="bold"
-            android:textColor="#546e7a"
+            android:textColor="#5a6a7a"
             android:gravity="center"
             android:padding="10dp"
-            android:background="@drawable/tab_inactive"/>
+            android:fontFamily="monospace"
+            android:background="@drawable/tab_inactive_white"/>
 
     </LinearLayout>
 
@@ -195,10 +207,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/card_background"
+        android:background="@drawable/card_white"
         android:padding="14dp"
         android:textSize="11sp"
-        android:textColor="#546e7a"
+        android:textColor="#0d1117"
         android:fontFamily="monospace"
         android:scrollbars="vertical"
         android:maxLines="300"
@@ -220,13 +232,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Threat List Card -->
             <LinearLayout
                 android:id="@+id/threatListCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/card_background_danger"
+                android:background="@drawable/card_danger_white"
                 android:layout_marginBottom="12dp"
                 android:padding="14dp"
                 android:visibility="gone">
@@ -237,8 +248,9 @@
                     android:text="THREATS DETECTED"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="#ef5350"
-                    android:letterSpacing="0.1"
+                    android:textColor="#cc1f3a"
+                    android:letterSpacing="0.05"
+                    android:fontFamily="monospace"
                     android:layout_marginBottom="10dp"/>
 
                 <LinearLayout
@@ -249,7 +261,6 @@
 
             </LinearLayout>
 
-            <!-- Empty state -->
             <LinearLayout
                 android:id="@+id/quarantineEmpty"
                 android:layout_width="match_parent"
@@ -257,32 +268,34 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:padding="40dp"
-                android:background="@drawable/card_background">
+                android:background="@drawable/card_white">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="✓"
                     android:textSize="40sp"
-                    android:textColor="#81c784"
+                    android:textColor="#00875a"
                     android:gravity="center"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No threats in quarantine"
-                    android:textSize="14sp"
-                    android:textColor="#546e7a"
+                    android:textSize="13sp"
+                    android:textColor="#5a6a7a"
                     android:gravity="center"
+                    android:fontFamily="monospace"
                     android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Run a scan to check your device"
-                    android:textSize="11sp"
-                    android:textColor="#37474f"
+                    android:textSize="10sp"
+                    android:textColor="#8a9baa"
                     android:gravity="center"
+                    android:fontFamily="monospace"
                     android:layout_marginTop="4dp"/>
 
             </LinearLayout>
