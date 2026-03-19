@@ -204,7 +204,7 @@
         android:maxLines="300"
         android:gravity="bottom"/>
 
-    <!-- Quarantine Panel (hidden by default) -->
+    <!-- Quarantine Panel -->
     <ScrollView
         android:id="@+id/quarantinePanel"
         android:layout_width="match_parent"
