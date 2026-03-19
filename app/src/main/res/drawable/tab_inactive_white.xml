@@ -4,8 +4,3 @@
     <corners android:radius="8dp"/>
     <stroke android:width="0.5dp" android:color="#c8d4de"/>
 </shape>
-```
-
-Also update `AndroidManifest.xml` to enable landscape — find:
-```
-https://github.com/harshavardan423/HypatiaTM/blob/stable/app/src/main/AndroidManifest.xml
