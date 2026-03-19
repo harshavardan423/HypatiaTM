@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="us.spotco.malwarescanner">
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,11 +16,9 @@
         tools:ignore="QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <queries>
         <package android:name="org.torproject.android" />
     </queries>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -31,14 +28,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@android:style/Theme.DeviceDefault">
+        android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar">
         <activity
             android:name=".NotificationPromptActivity"
             android:exported="false"
             android:launchMode="singleInstance"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:noHistory="true"
             android:excludeFromRecents="true" />
         <activity
@@ -48,17 +43,14 @@
             android:configChanges="orientation|screenSize|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <service
             android:name=".MalwareScannerService"
             android:enabled="true"
             android:exported="false"
             android:label="Realtime Malware Scanner" />
-
         <service
             android:name=".LinkScannerService"
             android:exported="false"
@@ -71,7 +63,6 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_service_config" />
         </service>
-
         <receiver
             android:name=".EventReceiver"
             android:enabled="true"
@@ -84,10 +75,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REPLACED" />
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
-
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
     </application>
-
 </manifest>
