@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="#00875a"
-            android:padding="8dp".
+            android:padding="8dp"
             android:gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -191,7 +191,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card_white"
-                android:padding="8dp".
+                android:padding="8dp"
                 android:gravity="center"
                 android:layout_marginEnd="5dp">
                 <TextView
@@ -218,7 +218,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card_white"
-                android:padding="8dp".
+                android:padding="8dp"
                 android:gravity="center"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp">
@@ -246,7 +246,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card_white"
-                android:padding="8dp".
+                android:padding="8dp"
                 android:gravity="center"
                 android:layout_marginStart="5dp">
                 <TextView
@@ -309,7 +309,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/card_white"
-            android:padding="8dp".
+            android:padding="8dp"
             android:textSize="10sp"
             android:textColor="#0d1117"
             android:fontFamily="monospace"
@@ -430,7 +430,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/card_white"
-            android:padding="8dp".
+            android:padding="8dp"
             android:textSize="10sp"
             android:textColor="#0d1117"
             android:fontFamily="monospace"
