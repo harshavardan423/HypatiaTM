@@ -1,198 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0a0d14"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:background="#0a0d14">
 
+    <!-- Top Status Banner -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:background="@drawable/card_background"
+        android:padding="28dp"
+        android:gravity="center"
+        android:layout_margin="16dp">
 
-        <!-- Status Card -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txtStatusLabel"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/card_background"
-            android:layout_marginBottom="12dp"
-            android:padding="24dp"
-            android:gravity="center">
+            android:text="PROTECTED"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#81c784"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="6dp"/>
 
-            <TextView
-                android:id="@+id/txtStatusLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PROTECTED"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="#81c784"
-                android:letterSpacing="0.15"
-                android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/txtStatusSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap to scan your device"
+            android:textSize="12sp"
+            android:textColor="#546e7a"/>
 
-            <TextView
-                android:id="@+id/txtStatusSub"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tap to scan your device"
-                android:textSize="12sp"
-                android:textColor="#546e7a"/>
-
-        </LinearLayout>
-
-        <!-- Progress Bar -->
         <View
             android:id="@+id/scanProgressBar"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginTop="16dp"
             android:background="#7986cb"
             android:visibility="gone"/>
 
-        <!-- Stats Row -->
+    </LinearLayout>
+
+    <!-- Stats Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginBottom="12dp">
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="12dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@drawable/card_background"
-                android:padding="14dp"
-                android:gravity="center"
-                android:layout_marginEnd="6dp">
-                <TextView
-                    android:id="@+id/txtStatFiles"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:textColor="#81c784"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="FILES SCANNED"
-                    android:textSize="9sp"
-                    android:textColor="#546e7a"
-                    android:letterSpacing="0.1"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@drawable/card_background"
-                android:padding="14dp"
-                android:gravity="center"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="3dp">
-                <TextView
-                    android:id="@+id/txtStatSigs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.6M"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:textColor="#c5cae9"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SIGNATURES"
-                    android:textSize="9sp"
-                    android:textColor="#546e7a"
-                    android:letterSpacing="0.1"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@drawable/card_background"
-                android:padding="14dp"
-                android:gravity="center"
-                android:layout_marginStart="6dp">
-                <TextView
-                    android:id="@+id/txtStatThreats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:textColor="#ef5350"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="THREATS"
-                    android:textSize="9sp"
-                    android:textColor="#546e7a"
-                    android:letterSpacing="0.1"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- Last Scan Info -->
-        <TextView
-            android:id="@+id/txtLastScan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="No scan performed yet"
-            android:textSize="11sp"
-            android:textColor="#37474f"
-            android:gravity="center"
-            android:layout_marginBottom="12dp"/>
-
-        <!-- Threat List Card (hidden until threats found) -->
-        <LinearLayout
-            android:id="@+id/threatListCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@drawable/card_background_danger"
-            android:layout_marginBottom="12dp"
+            android:background="@drawable/card_background"
             android:padding="14dp"
-            android:visibility="gone">
-
+            android:gravity="center"
+            android:layout_marginEnd="6dp">
+            <TextView
+                android:id="@+id/txtStatFiles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#81c784"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="THREATS DETECTED"
-                android:textSize="11sp"
-                android:textStyle="bold"
-                android:textColor="#ef5350"
-                android:letterSpacing="0.1"
-                android:layout_marginBottom="10dp"/>
-
-            <LinearLayout
-                android:id="@+id/threatListContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"/>
-
+                android:text="FILES SCANNED"
+                android:textSize="8sp"
+                android:textColor="#546e7a"
+                android:letterSpacing="0.1"/>
         </LinearLayout>
 
-        <!-- Log Output -->
-        <TextView
-            android:id="@+id/txtLogOutput"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
             android:background="@drawable/card_background"
             android:padding="14dp"
-            android:textSize="11sp"
-            android:textColor="#546e7a"
-            android:fontFamily="monospace"
-            android:scrollbars="vertical"
-            android:maxLines="200"
-            android:layout_marginBottom="12dp"
-            android:gravity="bottom"/>
+            android:gravity="center"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp">
+            <TextView
+                android:id="@+id/txtStatSigs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.6M"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#c5cae9"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIGNATURES"
+                android:textSize="8sp"
+                android:textColor="#546e7a"
+                android:letterSpacing="0.1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="14dp"
+            android:gravity="center"
+            android:layout_marginStart="6dp">
+            <TextView
+                android:id="@+id/txtStatThreats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#ef5350"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THREATS"
+                android:textSize="8sp"
+                android:textColor="#546e7a"
+                android:letterSpacing="0.1"/>
+        </LinearLayout>
 
     </LinearLayout>
-</ScrollView>
+
+    <!-- Last Scan -->
+    <TextView
+        android:id="@+id/txtLastScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No scan performed yet"
+        android:textSize="10sp"
+        android:textColor="#37474f"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Tab Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tabLog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SCAN LOG"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#7986cb"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/tab_active"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tabQuarantine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="QUARANTINE"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#546e7a"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/tab_inactive"/>
+
+    </LinearLayout>
+
+    <!-- Log Panel -->
+    <TextView
+        android:id="@+id/txtLogOutput"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/card_background"
+        android:padding="14dp"
+        android:textSize="11sp"
+        android:textColor="#546e7a"
+        android:fontFamily="monospace"
+        android:scrollbars="vertical"
+        android:maxLines="300"
+        android:gravity="bottom"/>
+
+    <!-- Quarantine Panel (hidden by default) -->
+    <ScrollView
+        android:id="@+id/quarantinePanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Threat List Card -->
+            <LinearLayout
+                android:id="@+id/threatListCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_background_danger"
+                android:layout_marginBottom="12dp"
+                android:padding="14dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="THREATS DETECTED"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#ef5350"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:id="@+id/threatListContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+
+            </LinearLayout>
+
+            <!-- Empty state -->
+            <LinearLayout
+                android:id="@+id/quarantineEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="40dp"
+                android:background="@drawable/card_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✓"
+                    android:textSize="40sp"
+                    android:textColor="#81c784"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No threats in quarantine"
+                    android:textSize="14sp"
+                    android:textColor="#546e7a"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Run a scan to check your device"
+                    android:textSize="11sp"
+                    android:textColor="#37474f"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
